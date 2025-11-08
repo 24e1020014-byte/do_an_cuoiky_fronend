@@ -1,0 +1,60 @@
+/* Thêm vào file responsive.css của bạn */
+
+/* 💻 Máy tính bảng (<= 992px) */
+@media (max-width: 992px) {
+  .product-grid {
+    /* Chuyển thành 3 cột */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .perks-list {
+    gap: 20px;
+  }
+}
+
+/* 📱 Di động (<= 768px) */
+@media (max-width: 768px) {
+  .product-grid {
+    /* Chuyển thành 2 cột */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .collection-hero h1 {
+    font-size: 28px;
+  }
+
+  /* Cho thanh filter/sort xuống dòng */
+  .collection-controls {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch; /* Kéo dãn các phần tử */
+  }
+  .collection-controls .sort-group {
+    justify-content: space-between;
+  }
+  .sort-group label {
+    display: none; /* Ẩn chữ "Sort by:" cho gọn */
+  }
+
+  /* Cho các perks xuống dòng */
+  .perks-list {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .collection-perks h2 {
+    font-size: 20px;
+  }
+
+  /* Ẩn nút "Quick Add" trên di động (khó hover) */
+  .quick-add-btn {
+    display: none;
+  }
+  .product-title {
+    font-size: 15px;
+  }
+  .product-price {
+    font-size: 14px;
+  }
+}

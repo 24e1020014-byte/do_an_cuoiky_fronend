@@ -1,0 +1,308 @@
+/* products.css */
+.products-toolbar {
+  max-width: 1200px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(139, 30, 20, 0.12);
+  padding: 10px 20px;      /* ← có padding ngang 20px để khớp container nội dung */
+  margin: 50px 0;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+
+/* Cụm trái (Filter + Featured) */
+.toolbar-left {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-btn {
+  border: 1px solid rgba(139, 30, 20, 0.2);
+  background: none;
+  color: #8b1e14;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toolbar-btn:hover {
+  background-color: rgba(139, 30, 20, 0.05);
+}
+
+/* Cụm phải (3 icon layout) */
+.toolbar-right {
+  display: flex;
+  gap: 14px;
+}
+
+.layout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8b1e14;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.layout-btn.active,
+.layout-btn:hover {
+  opacity: 1;
+  color: #8b1e14;
+}
+
+
+
+/* --- Bộ lọc bên trái --- */
+.filters-panel {
+  display: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid rgba(139, 30, 20, 0.12);
+  background-color: #fff;
+  color: #8b1e14;
+  font-family: "Playfair Display", serif;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.filters-panel.visible {
+  display: block;
+}
+
+.filters-panel h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.filter-list li {
+  margin: 6px 0;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.filter-list li input[type="checkbox"] {
+  accent-color: #8b1e14;
+  transform: scale(1.1);
+}
+
+.filter-list .show-more {
+  margin-top: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Hiệu ứng trượt mượt */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* FEATURED DROPDOWN */
+.sort-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.sort-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid rgba(139, 30, 20, 0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  display: none; /* ẩn mặc định */
+  z-index: 1000;
+  width: 200px;
+}
+
+.sort-menu li {
+  padding: 8px 16px;
+  color: #8b1e14;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sort-menu li:hover {
+  background-color: rgba(139, 30, 20, 0.05);
+}
+
+/* Khi mở menu */
+.sort-dropdown.active .sort-menu {
+  display: block;
+}
+
+
+
+
+/* img */
+.product-gallery {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px; 
+  padding: 0 60px 60px 60px; 
+  justify-items: stretch;  */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 40px 0;
+  justify-items: stretch;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.product img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* giúp các ảnh có cùng kích thước */
+  transition: opacity 0.8s ease;
+  border-radius: 10px;
+  display: block;
+}
+
+.product img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product:hover img.hover {
+  opacity: 1;
+}
+
+.product:hover img.main {
+  opacity: 0;
+}
+
+.product .title {
+  font-size: 18px;
+  color: #833b1a;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.product .price {
+  font-size: 16px;
+  color: #c47a3f;
+  margin-top: 4px;
+}
+
+
+
+
+/* =========================
+   HIỆU ỨNG HOVER: THANH TRẮNG & ĐỔI ẢNH
+   ========================= */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 10px;
+}
+
+.image-wrapper img.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* .progress-bar {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 3px;
+  background: white;
+  width: 0;
+  opacity: 0;
+} */
+
+/* Khi hover: hiển thị thanh trắng chạy ngang */
+/* .product:hover .progress-bar {
+  opacity: 1;
+  animation: progressMove 3s linear forwards;
+}
+
+@keyframes progressMove {
+  0% { width: 0%; }
+  33% { width: 33.3%; }
+  66% { width: 66.6%; }
+  100% { width: 100%; }
+} */
+
+
+.progress-bar {
+  position: absolute;
+  top: 12px;              /* Cách mép trên 12px để không dính vào viền */
+  left: 50%;              /* Đặt giữa theo chiều ngang */
+  transform: translateX(-50%); /* Căn giữa hoàn hảo */
+  height: 2px;            /* Mảnh, tinh tế hơn */
+  background: rgba(255, 255, 255, 0.85); /* Trắng trong suốt nhẹ */
+  border-radius: 2px;     /* Bo góc mềm mại */
+  width: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Khi hover: hiển thị và chạy ngang */
+.product:hover .progress-bar {
+  opacity: 1;
+  animation: progressMove 3s linear forwards;
+}
+
+/* Animation chạy đều, mượt */
+@keyframes progressMove {
+  0%   { width: 0; }
+  100% { width: 90%; } /* Không chạm sát mép */
+}

@@ -1,0 +1,49 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Thanh top bar */
+.topbar {
+  background: #DA5036;
+  border-bottom: 1px solid #DA5036;
+  padding: 6px 0;
+  overflow: hidden;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;          /* ẩn phần thừa */
+}
+
+.marquee__wrapper {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  /* animation sẽ được gắn bằng JS (vì cần biết chiều rộng thực tế) */
+  will-change: transform;
+}
+
+.marquee__item {
+  flex: 0 0 auto;            /* không co giãn, giữ kích thước nội dung */
+  padding: 0 6rem;           /* khoảng cách giữa các bản sao */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+  color: #EDC5B8;
+  text-decoration: underline;             /* bật gạch chân */
+  text-decoration-color: #EDC5B8;            /* màu gạch chân */
+  text-decoration-thickness: 1px;       /* độ dày 1.2px */
+  text-underline-offset: 2.2px;           /* khoảng cách giữa text và gạch */
+}
+
+/* Tôn trọng tùy chọn giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__wrapper { animation: none !important; }
+}
