@@ -1,0 +1,183 @@
+/* ===========================
+   SECTION: SERVICE PERKS
+   =========================== */
+.service-perks {
+  padding: 60px 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.perks-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.perks-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.perks-title {
+  font-family: "Playfair Display", serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #c47a3f; /* Màu nâu cam nhạt tiêu đề */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.perks-subtitle {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: #8b1e14;
+  margin-bottom: 20px;
+}
+
+.perks-list {
+  list-style: disc;
+  padding-left: 20px;
+  color: #8b1e14;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.perks-list li strong {
+  font-weight: 700;
+}
+
+.perks-note {
+  margin-top: 20px;
+  font-style: italic;
+  color: #8b1e14;
+}
+
+.perks-image {
+  flex: 1;
+}
+.perks-image img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  border-radius: 4px;
+}
+
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+  background-color: #F8F5F1; /* Màu nền kem nhạt */
+  padding: 60px 0 20px 0;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-family: sans-serif; /* Font chữ nội dung footer */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.4fr; /* Chia tỉ lệ cột */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.footer-text {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.address-group {
+  margin-bottom: 20px;
+}
+.address-group strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* --- Khối màu cam bên phải --- */
+.club-col {
+  background-color: #E35237; /* Màu cam đậm */
+  padding: 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.club-title {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.club-desc {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.zalo-link {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* --- Footer Bottom --- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.lang-btn {
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 900px) {
+  .perks-container {
+    flex-direction: column;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* 2 cột trên tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+  }
+  .club-col {
+    margin-top: 20px;
+  }
+}
