@@ -173,9 +173,9 @@
 
         <div class="product">
             <div class="image-wrapper">
-            <img src="assets/images/mousse12/BIRTHDAYREBIRTH9008-Edit_1.webp" class="img img1 active" alt="Product 3">
-            <img src="assets/images/mousse12/BIRTHDAYREBIRTH9020_2.webp" class="img img2" alt="Product 3 Hover">
-            <img src="assets/images/mousse12/fresh-avocado-mousse-254674.webp" class="img img3" alt="Product 3 Hover">
+            <img src="assets/images/mousse12/BIRTHDAYREBIRTH9008-Edit_1.webp" class="img img1 active" alt="Product 4">
+            <img src="assets/images/mousse12/BIRTHDAYREBIRTH9020_2.webp" class="img img2" alt="Product 4 Hover">
+            <img src="assets/images/mousse12/fresh-avocado-mousse-254674.webp" class="img img3" alt="Product 4 Hover">
             <div class="progress-bar"></div>
             </div>
             <p class="title">Fresh Avocado Mousse | ⌀12cm</p>
@@ -184,9 +184,9 @@
 
         <div class="product">
             <div class="image-wrapper">
-            <img src="assets/images/matcha15/MATCHA_TIRA_01.webp" class="img img1 active" alt="Product 3">
-            <img src="assets/images/matcha15/MATCHA_TIRA_GROUP.webp" class="img img2" alt="Product 3 Hover">
-            <img src="assets/images/matcha15/MATCHA_TIRAMISU_15cm.webp" class="img img3" alt="Product 3 Hover">
+            <img src="assets/images/matcha15/MATCHA_TIRA_01.webp" class="img img1 active" alt="Product 5">
+            <img src="assets/images/matcha15/MATCHA_TIRA_GROUP.webp" class="img img2" alt="Product 5 Hover">
+            <img src="assets/images/matcha15/MATCHA_TIRAMISU_15cm.webp" class="img img3" alt="Product 5 Hover">
             <div class="progress-bar"></div>
             </div>
             <p class="title">Matcha Tiramisu | ⌀15cm</p>
@@ -195,13 +195,46 @@
 
         <div class="product">
             <div class="image-wrapper">
-            <img src="assets/images/classic15/CLASSIC_TIRAMISU_3_2faf338f-b5fa-46ba-9499-a3f0caf89a59.webp" class="img img1 active" alt="Product 3">
-            <img src="assets/images/classic15/CLASSIC_TIRAMISU_4_5b46aae3-482a-4934-8206-eddb0e20773f.webp" class="img img2" alt="Product 3 Hover">
-            <img src="assets/images/classic15/ClassicTiramisu15cm.webp" class="img img3" alt="Product 3 Hover">
+            <img src="assets/images/classic15/CLASSIC_TIRAMISU_3_2faf338f-b5fa-46ba-9499-a3f0caf89a59.webp" class="img img1 active" alt="Product 6">
+            <img src="assets/images/classic15/CLASSIC_TIRAMISU_4_5b46aae3-482a-4934-8206-eddb0e20773f.webp" class="img img2" alt="Product 6 Hover">
+            <img src="assets/images/classic15/ClassicTiramisu15cm.webp" class="img img3" alt="Product 6 Hover">
             <div class="progress-bar"></div>
             </div>
             <p class="title">Classic Tiramisu | ⌀15cm</p>
             <p class="price">540.000₫</p>
+        </div>
+
+        <div class="product">
+            <div class="image-wrapper">
+            <img src="assets/images/classTir/CLASSIC_TIRAMISU_4_5b46aae3-482a-4934-8206-eddb0e20773f.webp" class="img img1 active" alt="Product 7">
+            <img src="assets/images/classTir/CLASSIC_TIRAMISU_5_a12e352e-5dfd-4bd8-9225-596a51e8c6cc.webp" class="img img2" alt="Product 7 Hover">
+            <img src="assets/images/classTir/ClassicTiramisu12cm.webp" class="img img3" alt="Product 7 Hover">
+            <div class="progress-bar"></div>
+            </div>
+            <p class="title">Classic Tiramisu | ⌀12cm</p>
+            <p class="price">435.000₫</p>
+        </div>
+
+        <div class="product">
+            <div class="image-wrapper">
+            <img src="assets/images/tiramisu15/RaspberryTiramisu15cm.webp" class="img img1 active" alt="Product 8">
+            <img src="assets/images/tiramisu15/RASPBERRYTIRAMISU_3.webp" class="img img2" alt="Product 8 Hover">
+            <img src="assets/images/tiramisu15/RASPBERRYTIRAMISU_4.webp" class="img img3" alt="Product 8 Hover">
+            <div class="progress-bar"></div>
+            </div>
+            <p class="title">Raspberry Tiramisu | ⌀15cm</p>
+            <p class="price">620.000₫</p>
+        </div>
+
+        <div class="product">
+            <div class="image-wrapper">
+            <img src="assets/images/tirasu12/RaspberryTiramisu12cm.webp" class="img img1 active" alt="Product 9">
+            <img src="assets/images/tirasu12/RASPBERRYTIRAMISU_1.webp" class="img img2" alt="Product 9 Hover">
+            <img src="assets/images/tirasu12/RASPBERRYTIRAMISU_6.webp" class="img img3" alt="Product 9 Hover">
+            <div class="progress-bar"></div>
+            </div>
+            <p class="title">Raspberry Tiramisu | ⌀12cm</p>
+            <p class="price">450.000₫</p>
         </div>
     </section>
 </div>
@@ -341,21 +374,29 @@
     </script>
 
 
+
     <script>
         const filterBtn = document.querySelector('.filter-btn');
         const filterPanel = document.querySelector('.filters-panel');
+        const gallery = document.querySelector('.product-gallery');
 
         filterBtn.addEventListener('click', () => {
             const isActive = filterBtn.classList.toggle('active');
+
             if (isActive) {
-            filterBtn.innerHTML = `HIDE FILTERS <i class="fa-solid fa-filter"></i>`;
-            filterPanel.classList.add('visible');
+                filterBtn.innerHTML = `HIDE FILTERS <i class="fa-solid fa-filter"></i>`;
+                filterPanel.classList.add('visible');
+                gallery.classList.add('shrink');  // ⭐
             } else {
-            filterBtn.innerHTML = `FILTER <i class="fa-solid fa-filter"></i>`;
-            filterPanel.classList.remove('visible');
+                filterBtn.innerHTML = `FILTER <i class="fa-solid fa-filter"></i>`;
+                filterPanel.classList.remove('visible');
+                gallery.classList.remove('shrink'); // ⭐
             }
         });
     </script>
+
+
+    
 
     <script>
         const checkboxes = document.querySelectorAll('.filter-list input[type="checkbox"]');
@@ -426,6 +467,13 @@
         });
         });
     </script>
+
+
+    
+
+    
+
+
 
 
 
