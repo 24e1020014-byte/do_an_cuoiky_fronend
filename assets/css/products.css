@@ -122,12 +122,6 @@
 
 }
 
-/* .filters-panel.visible {
-  max-height: 500px;       
-  padding: 20px;           
-  opacity: 1;
-} */
-
 .filters-panel.visible {
   opacity: 1;
   transform: translateX(0); /* Trượt vào vị trí */
@@ -177,6 +171,22 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Mặc định ẩn các mục này đi */
+.hidden-item {
+  display: none;
+}
+
+/* Style cho nút Show More để người dùng biết là bấm được */
+.show-more {
+  font-weight: 700;
+  cursor: pointer;
+  color: #8b1e14;
+  margin-top: 10px;
+}
+.show-more:hover {
+  text-decoration: underline;
+}
+
 
 
 /* FEATURED DROPDOWN */
@@ -224,11 +234,6 @@
 
 /* img */
 .product-gallery {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px; 
-  padding: 0 60px 60px 60px; 
-  justify-items: stretch;  */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
@@ -238,6 +243,27 @@
   width: 100%;
   box-sizing: border-box;
   transition: all 0.35s ease;
+}
+
+
+/* Khi có class layout-2 thì chuyển thành 2 cột */
+.product-gallery.layout-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Tùy chỉnh: Khi ảnh to ra (2 cột), có thể bạn muốn tăng chiều cao ảnh lên chút cho đẹp */
+.product-gallery.layout-2 .image-wrapper {
+  height: 450px; /* Tăng chiều cao ảnh khi ở chế độ xem lớn */
+}
+
+.product-gallery.layout-4 {
+  grid-template-columns: repeat(4, 1fr); /* Chia 4 cột */
+  gap: 20px; /* Giảm khoảng cách chút cho đỡ thưa */
+}
+
+/* Khi ảnh nhỏ (4 cột), giảm chiều cao ảnh xuống cho cân đối */
+.product-gallery.layout-4 .image-wrapper {
+  height: 280px; 
 }
 
 .product {
@@ -317,30 +343,43 @@
 }
 
 
+/* --- PROGRESS BAR KIỂU STORY --- */
 
-.progress-bar {
+/* Hộp chứa chung: Nằm trên cùng, chia cột flex */
+.progress-container {
   position: absolute;
-  top: 12px;              /* Cách mép trên 12px để không dính vào viền */
-  left: 50%;              /* Đặt giữa theo chiều ngang */
-  transform: translateX(-50%); /* Căn giữa hoàn hảo */
-  height: 2px;            /* Mảnh, tinh tế hơn */
-  background: rgba(255, 255, 255, 0.85); /* Trắng trong suốt nhẹ */
-  border-radius: 2px;     /* Bo góc mềm mại */
+  top: 10px;          /* Cách mép trên 10px */
+  left: 10px;         /* Cách mép trái 10px */
+  right: 10px;        /* Cách mép phải 10px */
+  z-index: 20;        /* Nằm trên ảnh và badge */
+  display: flex;      /* Xếp các thanh nằm ngang */
+  gap: 5px;           /* Khoảng cách giữa các đoạn */
+  height: 3px;        /* Chiều cao thanh */
+  pointer-events: none; /* Để chuột xuyên qua bấm vào ảnh được */
+}
+
+/* Các đoạn nền (màu xám mờ) */
+.progress-segment {
+  flex: 1;            /* Tự động chia đều chiều rộng */
+  background-color: rgba(255, 255, 255, 0.3); /* Màu nền chưa chạy */
+  border-radius: 2px;
+  overflow: hidden;   /* Để thanh fill bên trong không bị tràn */
+  height: 100%;
+  position: relative;
+}
+
+/* Thanh màu trắng chạy bên trong mỗi đoạn */
+.progress-fill {
+  background-color: #fff; /* Màu trắng sáng */
   width: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  height: 100%;
+  display: block;
 }
 
-/* Khi hover: hiển thị và chạy ngang */
-.product:hover .progress-bar {
-  opacity: 1;
-  animation: progressMove 3s linear forwards;
-}
-
-/* Animation chạy đều, mượt */
-@keyframes progressMove {
-  0%   { width: 0; }
-  100% { width: 90%; } /* Không chạm sát mép */
+/* Hiệu ứng chạy từ 0 -> 100% */
+@keyframes fillAnimation {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 
@@ -424,6 +463,20 @@
 .add-to-cart-btn:hover {
   background-color: #8b1e14;
   color: #fff;
+}
+
+/* Hiệu ứng rung lắc giỏ hàng */
+@keyframes shakeCart {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.cart-shake i {
+  animation: shakeCart 0.4s ease-in-out;
+  color: #c47a3f; /* Đổi màu icon một chút khi rung */
 }
 
 /* ===========================

@@ -141,7 +141,7 @@
 }
 
 /* --- Footer Bottom --- */
-.footer-bottom {
+/* .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -150,7 +150,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #666;
-}
+} */
 
 .lang-btn {
   border: 1px solid #ccc;
@@ -180,4 +180,112 @@
   .club-col {
     margin-top: 20px;
   }
+}
+
+
+
+/* --- FOOTER BOTTOM LAYOUT --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Căn giữa trục dọc */
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: 40px;
+    position: relative;
+}
+
+/* --- LANGUAGE DROPDOWN --- */
+.lang-dropdown {
+    position: relative;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #555;
+    z-index: 100;
+    
+    /* 👇 CHỈNH SỬA Ở ĐÂY: Nhích lên trên 8px theo ý bạn */
+    transform: translateY(-15px); 
+}
+
+/* NÚT CHỌN (ENGLISH v) */
+.lang-selected {
+    border: 1px solid #e0e0e0; 
+    padding: 8px 12px;        /* Thu gọn padding một chút cho thanh thoát */
+    background-color: #f3efef;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 130px;         
+    transition: all 0.3s ease;
+    border-radius: 2px;       /* Bo góc nhẹ 2px cho mềm mại */
+}
+
+.lang-selected:hover {
+    border-color: #8b1e14;    
+    color: #8b1e14;
+}
+
+/* Mũi tên nhỏ */
+.lang-selected i {
+    font-size: 10px;          /* Mũi tên nhỏ lại cho tinh tế */
+    transition: transform 0.3s ease;
+}
+
+/* Xoay mũi tên khi mở */
+.lang-dropdown.active .lang-selected i {
+    transform: rotate(180deg);
+}
+
+/* DANH SÁCH XỔ XUỐNG */
+.lang-list {
+    position: absolute;
+    /* Hiện ngay dưới nút, cách 4px */
+    top: calc(100% + 4px); 
+    left: 0;
+    width: 100%;             /* Rộng bằng nút */
+    
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    /* Đổ bóng nhẹ hơn cho đẹp */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 2px;
+    
+    /* Ẩn mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng trượt mượt hơn */
+}
+
+/* Khi active thì hiện */
+.lang-dropdown.active .lang-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-list li {
+    padding: 10px 12px;
+    cursor: pointer;
+    color: #666;
+    font-size: 11px;
+    transition: all 0.2s;
+}
+
+.lang-list li:hover {
+    background-color: #fafafa;
+    color: #8b1e14;
+    padding-left: 16px; /* Hiệu ứng đẩy chữ sang phải xí khi hover */
+}
+
+/* Class ẩn mục đã chọn */
+.lang-list li.hidden {
+    display: none;
 }

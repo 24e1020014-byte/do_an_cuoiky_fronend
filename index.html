@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bakes Saigon | Birthday Cakes</title>
+  <link rel="icon" href="assets/images/monogramz_footer.webp" type="image/webp">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
@@ -69,7 +70,7 @@
 
           <a href="#" class="header-icon cart">
               <i class="fa-solid fa-cart-shopping"></i>
-              <span class="cart-count">2</span>
+              <span class="cart-count">0</span>
           </a>
       </div>
 
@@ -81,8 +82,8 @@
   
   <div class="products-toolbar">
     <div class="toolbar-left">
-      <button class="toolbar-btn filter-btn">
-        FILTER <i class="fa-solid fa-filter"></i>
+      <button class="toolbar-btn filter-btn active">
+        HIDE FILTERS <i class="fa-solid fa-filter"></i>
       </button>
       <div class="sort-dropdown">
         <button class="toolbar-btn sort-btn">
@@ -97,12 +98,20 @@
     </div>
     </div>
     <div class="toolbar-right">
-      <button class="layout-btn active"><i class="fa-solid fa-th-large"></i></button>
-      <button class="layout-btn"><i class="fa-solid fa-th"></i></button>
-    </div>
+      <button class="layout-btn" data-layout="2">
+          <i class="fa-solid fa-th-large"></i>
+      </button>
+      
+      <button class="layout-btn active" data-layout="3">
+          <i class="fa-solid fa-th"></i>
+      </button>
+      
+      <button class="layout-btn" data-layout="4">
+          <i class="fa-solid fa-grip"></i> </button>
+  </div>
   </div>
 
-  <div class="filters-panel">
+  <div class="filters-panel visible">
     <h4>ALL COLLECTIONS <i class="fa-solid fa-chevron-down"></i></h4>
     <ul class="filter-list">
       <li><input type="checkbox"> "TUNG TĂNG CHƠI TRĂNG"</li>
@@ -111,11 +120,17 @@
       <li><input type="checkbox"> CHOUCHOU COLLECTION</li>
       <li><input type="checkbox"> COFFEE</li>
       <li><input type="checkbox"> FRENCH PASTRIES</li>
+      
+      <li class="hidden-item"><input type="checkbox"> JUICE</li>
+      <li class="hidden-item"><input type="checkbox"> MACARONS</li>
+      <li class="hidden-item"><input type="checkbox"> TEA</li>
+      <li class="hidden-item"><input type="checkbox"> NEW FRESHLY BAKED</li>
+
       <li class="show-more">SHOW MORE</li>
     </ul>
-  </div>
+</div>
 
-  <section class="product-gallery">
+  <section class="product-gallery shrink">
         
         <div class="product">
             <div class="image-wrapper">
@@ -123,7 +138,7 @@
                 <img src="assets/images/cheesecake12/CopyofBIRTHDAYREBIRTHCAKE6786.webp" class="img img1 active" alt="Product 1">
                 <img src="assets/images/cheesecake12/CopyofBIRTHDAYREBIRTHCAKE6809-Edit-Edit-Edit.webp" class="img img2" alt="Product 1 Hover">
                 <img src="assets/images/cheesecake12/CopyofBIRTHDAYREBIRTHCAKE6887.webp" class="img img3" alt="Product 1 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Salted Plum Strawberry No-Bake Cheesecake | ⌀12cm</p>
@@ -136,7 +151,7 @@
                 <img src="assets/images/chesecake15/CopyofBIRTHDAYREBIRTHCAKE6809-Edit-Edit-Edit.webp" class="img img1 active" alt="Product 2">
                 <img src="assets/images/chesecake15/CopyofBIRTHDAYREBIRTHCAKE6834.webp" class="img img2" alt="Product 2 Hover">
                 <img src="assets/images/chesecake15/CopyofBIRTHDAYREBIRTHCAKE6850-Edit-2.webp" class="img img3" alt="Product 2 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Salted Plum Strawberry No-Bake Cheesecake | ⌀15cm</p>
@@ -148,7 +163,7 @@
                 <img src="assets/images/matcha12/MATCHA_TIRA_01.webp" class="img img1 active" alt="Product 3">
                 <img src="assets/images/matcha12/MATCHA_TIRA_02.webp" class="img img2" alt="Product 3 Hover">
                 <img src="assets/images/matcha12/MATCHA_TIRAMISU_12cm.webp" class="img img3" alt="Product 3 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Matcha Tiramisu | ⌀12cm</p>
@@ -161,7 +176,7 @@
                 <img src="assets/images/mousse12/BIRTHDAYREBIRTH9008-Edit_1.webp" class="img img1 active" alt="Product 4">
                 <img src="assets/images/mousse12/BIRTHDAYREBIRTH9020_2.webp" class="img img2" alt="Product 4 Hover">
                 <img src="assets/images/mousse12/fresh-avocado-mousse-254674.webp" class="img img3" alt="Product 4 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Fresh Avocado Mousse | ⌀12cm</p>
@@ -174,7 +189,7 @@
                 <img src="assets/images/matcha15/MATCHA_TIRA_01.webp" class="img img1 active" alt="Product 5">
                 <img src="assets/images/matcha15/MATCHA_TIRA_GROUP.webp" class="img img2" alt="Product 5 Hover">
                 <img src="assets/images/matcha15/MATCHA_TIRAMISU_15cm.webp" class="img img3" alt="Product 5 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Matcha Tiramisu | ⌀15cm</p>
@@ -187,7 +202,7 @@
                 <img src="assets/images/classic15/CLASSIC_TIRAMISU_3_2faf338f-b5fa-46ba-9499-a3f0caf89a59.webp" class="img img1 active" alt="Product 6">
                 <img src="assets/images/classic15/CLASSIC_TIRAMISU_4_5b46aae3-482a-4934-8206-eddb0e20773f.webp" class="img img2" alt="Product 6 Hover">
                 <img src="assets/images/classic15/ClassicTiramisu15cm.webp" class="img img3" alt="Product 6 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Classic Tiramisu | ⌀15cm</p>
@@ -199,7 +214,7 @@
                 <img src="assets/images/classTir/CLASSIC_TIRAMISU_4_5b46aae3-482a-4934-8206-eddb0e20773f.webp" class="img img1 active" alt="Product 7">
                 <img src="assets/images/classTir/CLASSIC_TIRAMISU_5_a12e352e-5dfd-4bd8-9225-596a51e8c6cc.webp" class="img img2" alt="Product 7 Hover">
                 <img src="assets/images/classTir/ClassicTiramisu12cm.webp" class="img img3" alt="Product 7 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Classic Tiramisu | ⌀12cm</p>
@@ -211,7 +226,7 @@
                 <img src="assets/images/tiramisu15/RaspberryTiramisu15cm.webp" class="img img1 active" alt="Product 8">
                 <img src="assets/images/tiramisu15/RASPBERRYTIRAMISU_3.webp" class="img img2" alt="Product 8 Hover">
                 <img src="assets/images/tiramisu15/RASPBERRYTIRAMISU_4.webp" class="img img3" alt="Product 8 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Raspberry Tiramisu | ⌀15cm</p>
@@ -224,7 +239,7 @@
                 <img src="assets/images/tirasu12/RaspberryTiramisu12cm.webp" class="img img1 active" alt="Product 9">
                 <img src="assets/images/tirasu12/RASPBERRYTIRAMISU_1.webp" class="img img2" alt="Product 9 Hover">
                 <img src="assets/images/tirasu12/RASPBERRYTIRAMISU_6.webp" class="img img3" alt="Product 9 Hover">
-                <div class="progress-bar"></div>
+                <div class="progress-container"></div>
                 <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
             <p class="title">Raspberry Tiramisu | ⌀12cm</p>
@@ -271,93 +286,31 @@
     </div>
     <div class="footer-col club-col">
       <h3 class="club-title">Join Bakes Club</h3>
-      <p class="club-desc">Get special offers by following <a href="#" class="zalo-link">Bakes Zalo Official Account</a></p>
+      <p class="club-desc">Get special offers by following <a href="https://zalo.me/1592279760487466872" class="zalo-link">Bakes Zalo Official Account</a></p>
     </div>
   </div>
+  
   <div class="footer-bottom container">
-    <div class="lang-btn">ENGLISH <i class="fa-solid fa-chevron-down"></i></div>
+    <div class="lang-dropdown">
+        <div class="lang-selected">
+            ENGLISH <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <ul class="lang-list">
+          <li data-lang="ENGLISH" class="hidden">ENGLISH</li> 
+          <li data-lang="VIETNAMESE">VIETNAMESE</li>
+      </ul>
+    </div>
+
     <div class="copyright">© BAKES SAIGON 2025 · SAY HELLO</div>
-  </div>
+</div>
 </footer>
 
 
-<!-- <script src="assets/js/main.js"></script> -->
-<!-- <script> -->
-    <!-- // JS Filter Toggle
-    const filterBtn = document.querySelector('.filter-btn');
-    const filterPanel = document.querySelector('.filters-panel');
-    const gallery = document.querySelector('.product-gallery');
-
-    filterBtn.addEventListener('click', () => {
-        const isActive = filterBtn.classList.toggle('active');
-        if (isActive) {
-            filterBtn.innerHTML = `HIDE FILTERS <i class="fa-solid fa-filter"></i>`;
-            filterPanel.classList.add('visible');
-            gallery.classList.add('shrink'); 
-        } else {
-            filterBtn.innerHTML = `FILTER <i class="fa-solid fa-filter"></i>`;
-            filterPanel.classList.remove('visible');
-            gallery.classList.remove('shrink');
-        }
-    });
-
-    // JS Image Hover Animation
-    document.querySelectorAll('.product').forEach(product => {
-        const imgs = product.querySelectorAll('.image-wrapper img');
-        const bar = product.querySelector('.progress-bar');
-        let timer;
-        let index = 0;
-
-        product.addEventListener('mouseenter', () => {
-            clearInterval(timer);
-            index = 0;
-            imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
-            bar.style.animation = 'none';
-            void bar.offsetWidth;
-            bar.style.animation = 'progressMove 3s linear forwards';
-            timer = setInterval(() => {
-                imgs.forEach(img => img.classList.remove('active'));
-                index = (index + 1) % imgs.length;
-                imgs[index].classList.add('active');
-            }, 1000);
-        });
-
-        product.addEventListener('mouseleave', () => {
-            clearInterval(timer);
-            bar.style.animation = 'none';
-            imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
-        });
-    });
-</script>
-
-<script> -->
-  <!-- /* --- LOGIC CHO NÚT FEATURED --- */
-  const sortDropdown = document.querySelector('.sort-dropdown');
-  const sortBtn = document.querySelector('.sort-btn');
-
-  if (sortBtn && sortDropdown) {
-      // 1. Bấm vào nút thì bật/tắt class 'active'
-      sortBtn.addEventListener('click', (e) => {
-          e.stopPropagation(); // Ngăn sự kiện nổi bọt để không bị 'document' bắt được ngay
-          sortDropdown.classList.toggle('active');
-      });
-
-      // 2. Bấm bất kỳ đâu ngoài màn hình thì đóng menu
-      document.addEventListener('click', (e) => {
-          if (!sortDropdown.contains(e.target)) {
-              sortDropdown.classList.remove('active');
-          }
-      });
-  }
-</script> -->
-
-<!-- JS -->
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
   <script src="assets/js/menu.js"></script>
   <script src="assets/js/filter.js"></script>
   <script src="assets/js/cart.js"></script>
 
-    <!-- JS phần header -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const SPEED_PX_PER_SEC = 60; // tốc độ: pixel/giây — chỉnh nhanh/chậm ở đây
@@ -452,20 +405,35 @@
     </script>
 
 
-
-    <!-- JS phần filter -->
     <script>
-        const layoutButtons = document.querySelectorAll('.layout-btn');
+      /* --- LOGIC CHUYỂN ĐỔI LAYOUT --- */
+      const layoutButtons = document.querySelectorAll('.layout-btn');
+      const productGallery = document.querySelector('.product-gallery');
 
-        layoutButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            layoutButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
-        });
+      layoutButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+              // 1. Xử lý nút active
+              layoutButtons.forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
 
+              // 2. Lấy giá trị layout (2, 3 hoặc 4)
+              const layoutType = btn.getAttribute('data-layout');
+
+              // 3. Reset: Xóa HẾT các class layout cũ (quan trọng)
+              productGallery.classList.remove('layout-2', 'layout-4');
+
+              // 4. Thêm class tương ứng
+              if (layoutType === '2') {
+                  productGallery.classList.add('layout-2');
+              } else if (layoutType === '4') {
+                  productGallery.classList.add('layout-4');
+              }
+              
+              // Nếu là '3' thì không cần làm gì vì mặc định đã là 3 cột (do đã xóa hết class ở bước 3)
+          });
+      });
+  
     </script>
-
 
 
     <script>
@@ -505,7 +473,6 @@
         });
     </script>
 
-    <!-- JS phần feature-->
     <script>
         const sortDropdown = document.querySelector('.sort-dropdown');
         const sortBtn = document.querySelector('.sort-btn');
@@ -522,43 +489,229 @@
     </script>
 
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const showMoreBtn = document.querySelector('.show-more');
+        const hiddenItems = document.querySelectorAll('.hidden-item');
 
-    <!-- js phần img -->
+        if (showMoreBtn) {
+            showMoreBtn.addEventListener('click', () => {
+                // Kiểm tra xem đang mở hay đóng dựa trên class 'expanded'
+                const isExpanded = showMoreBtn.classList.contains('expanded');
+
+                if (isExpanded) {
+                    // --- TRƯỜNG HỢP: ĐANG MỞ -> BẤM ĐỂ ĐÓNG ---
+                    
+                    // 1. Ẩn các mục đi
+                    hiddenItems.forEach(item => {
+                        item.style.display = 'none';
+                    });
+
+                    // 2. Đổi chữ về lại ban đầu
+                    showMoreBtn.innerText = 'SHOW MORE';
+                    
+                    // 3. Xóa class trạng thái
+                    showMoreBtn.classList.remove('expanded');
+
+                } else {
+                    // --- TRƯỜNG HỢP: ĐANG ĐÓNG -> BẤM ĐỂ MỞ ---
+
+                    // 1. Hiện các mục lên (dùng display: flex để icon và chữ thẳng hàng)
+                    hiddenItems.forEach(item => {
+                        item.style.display = 'flex'; 
+                    });
+
+                    // 2. Đổi chữ thành Show Less
+                    showMoreBtn.innerText = 'SHOW LESS';
+
+                    // 3. Thêm class trạng thái
+                    showMoreBtn.classList.add('expanded');
+                }
+            });
+        }
+    });
+    </script>
+
+
+
     <script>
         document.querySelectorAll('.product').forEach(product => {
-        const imgs = product.querySelectorAll('.image-wrapper img');
-        const bar = product.querySelector('.progress-bar');
+            const wrapper = product.querySelector('.image-wrapper');
+            const imgs = wrapper.querySelectorAll('img');
+            const progressContainer = wrapper.querySelector('.progress-container');
+            
+            let timer;
+            let currentIndex = 0;
+            const DISPLAY_TIME = 2000; // Thời gian mỗi ảnh (2 giây)
 
-        let timer;
-        let index = 0;
+            // Hàm vẽ lại các thanh progress
+            function renderProgressBars() {
+                // Nếu chưa có container (do HTML chưa sửa) thì return để tránh lỗi
+                if (!progressContainer) return; 
 
-        product.addEventListener('mouseenter', () => {
-            // Reset
-            clearInterval(timer);
-            index = 0;
+                progressContainer.innerHTML = ''; // Xóa thanh cũ
+                
+                imgs.forEach((_, i) => {
+                    // Tạo khung xám
+                    const segment = document.createElement('div');
+                    segment.classList.add('progress-segment');
 
-            imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
+                    // Tạo thanh trắng bên trong
+                    const fill = document.createElement('div');
+                    fill.classList.add('progress-fill');
 
-            // Reset và khởi động animation thanh trắng
-            bar.style.animation = 'none';
-            void bar.offsetWidth; // ép trình duyệt reset animation
-            bar.style.animation = 'progressMove 3s linear forwards';
+                    // Logic hiển thị:
+                    if (i < currentIndex) {
+                        fill.style.width = '100%'; // Ảnh đã qua -> Full trắng
+                    } else if (i > currentIndex) {
+                        fill.style.width = '0%';   // Ảnh chưa tới -> Rỗng
+                    } else {
+                        // Ảnh đang xem -> Chạy Animation
+                        fill.style.animation = `fillAnimation ${DISPLAY_TIME}ms linear forwards`;
+                    }
 
-            // Cứ mỗi 1 giây thì đổi ảnh
-            timer = setInterval(() => {
-            imgs.forEach(img => img.classList.remove('active'));
-            index = (index + 1) % imgs.length;
-            imgs[index].classList.add('active');
-            }, 1000); // 3 ảnh => 3 giây
+                    segment.appendChild(fill);
+                    progressContainer.appendChild(segment);
+                });
+            }
+
+            // Hàm chuyển ảnh tiếp theo
+            function nextImage() {
+                // Ẩn ảnh cũ
+                imgs[currentIndex].classList.remove('active');
+                
+                // Tăng index
+                currentIndex = (currentIndex + 1) % imgs.length;
+                
+                // Hiện ảnh mới
+                imgs[currentIndex].classList.add('active');
+                
+                // Vẽ lại thanh progress
+                renderProgressBars();
+            }
+
+            // SỰ KIỆN HOVER
+            product.addEventListener('mouseenter', () => {
+                // 1. Reset về ảnh đầu tiên khi hover vào
+                imgs.forEach(img => img.classList.remove('active'));
+                currentIndex = 0;
+                imgs[0].classList.add('active');
+
+                // 2. Vẽ thanh progress đầu tiên
+                renderProgressBars();
+
+                // 3. Bắt đầu đếm giờ chuyển ảnh
+                timer = setInterval(nextImage, DISPLAY_TIME);
+            });
+
+            // SỰ KIỆN RỜI CHUỘT
+            product.addEventListener('mouseleave', () => {
+                // Dừng chuyển ảnh
+                clearInterval(timer);
+                
+                // Xóa thanh progress để gọn gàng
+                if (progressContainer) progressContainer.innerHTML = '';
+                
+                // Reset ảnh về ảnh gốc (ảnh 1)
+                imgs.forEach(img => img.classList.remove('active'));
+                imgs[0].classList.add('active');
+                currentIndex = 0;
+            });
         });
+    </script>
 
-        product.addEventListener('mouseleave', () => {
-            clearInterval(timer);
-            bar.style.animation = 'none';
-            bar.style.width = '0';
-            imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
+    <script>
+      /* --- LOGIC TĂNG GIỎ HÀNG --- */
+      document.addEventListener('DOMContentLoaded', () => {
+          // 1. Chọn phần tử hiển thị số lượng trên Header
+          const cartCountEl = document.querySelector('.cart-count');
+          
+          // 2. Chọn tất cả nút "ADD TO CART"
+          const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+
+          // 3. Gán sự kiện Click cho từng nút
+          addToCartBtns.forEach(btn => {
+              btn.addEventListener('click', function(e) {
+                  e.preventDefault(); // Ngăn thẻ load lại trang (nếu có)
+
+                  // Lấy số lượng hiện tại (đang là chuỗi text) và chuyển thành số nguyên
+                  let currentCount = parseInt(cartCountEl.innerText);
+
+                  // Tăng lên 1
+                  currentCount++;
+
+                  // Cập nhật lại số mới lên giao diện
+                  cartCountEl.innerText = currentCount;
+
+                  // --- (Thêm hiệu ứng nhỏ cho vui mắt) ---
+                  // Đổi chữ nút bấm thành "ADDED!" trong 1 giây rồi quay lại
+                  const originalText = this.innerText;
+                  this.innerText = "ADDED! ✓";
+                  this.style.backgroundColor = "#8b1e14"; // Đổi màu nút
+                  this.style.color = "#fff";
+
+                  setTimeout(() => {
+                      this.innerText = originalText;
+                      this.style.backgroundColor = ""; // Reset màu
+                      this.style.color = "";
+                  }, 1000);
+                  
+                  // Rung icon giỏ hàng
+                  const cartIcon = document.querySelector('.header-icon.cart');
+                  cartIcon.classList.add('cart-shake');
+                  setTimeout(() => {
+                      cartIcon.classList.remove('cart-shake');
+                  }, 500);
+              });
+          });
+      });
+    </script>
+
+    <script>
+      /* --/* --- LOGIC CHUYỂN ĐỔI NGÔN NGỮ (ẨN MỤC ĐÃ CHỌN) --- */
+    document.addEventListener('DOMContentLoaded', () => {
+        const langDropdown = document.querySelector('.lang-dropdown');
+        const langSelected = document.querySelector('.lang-selected');
+        const langItems = document.querySelectorAll('.lang-list li');
+
+        // 1. Bật/Tắt menu
+        if (langDropdown) {
+            langDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langDropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', () => {
+                langDropdown.classList.remove('active');
+            });
+        }
+
+        // 2. Xử lý khi chọn ngôn ngữ
+        langItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                // Ngăn việc sự kiện click lan ra ngoài làm đóng menu ngay lập tức (nếu cần xử lý thêm)
+                // e.stopPropagation(); 
+                
+                const selectedText = item.innerText;
+
+                // BƯỚC QUAN TRỌNG: 
+                // 1. Hiện lại tất cả các mục trong danh sách (xóa class hidden)
+                langItems.forEach(li => li.classList.remove('hidden'));
+
+                // 2. Ẩn mục vừa được bấm chọn (thêm class hidden)
+                item.classList.add('hidden');
+                
+                // 3. Cập nhật chữ hiển thị bên ngoài
+                langSelected.innerHTML = `${selectedText} <i class="fa-solid fa-chevron-down"></i>`;
+
+                // --- HIỆU ỨNG FADE ---
+                document.body.classList.add('switching-lang');
+                setTimeout(() => {
+                    document.body.classList.remove('switching-lang');
+                }, 500); 
+            });
         });
-        });
+    });
     </script>
 
 </body>
