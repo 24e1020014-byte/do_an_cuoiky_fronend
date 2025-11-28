@@ -356,3 +356,80 @@
     opacity: 1;
 }
 
+
+
+/* --- Đảm bảo .image-wrapper là điểm neo --- */
+.image-wrapper {
+  position: relative; /* Đã có rồi, nhưng nhắc lại cho chắc */
+  overflow: hidden;   /* Để nút trượt từ dưới lên không bị lòi ra ngoài */
+}
+
+/* ===========================
+   1. BADGE (NEW IN / RE-RELEASE)
+   =========================== */
+/* Badge (Nhãn góc trên) */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  
+  background-color: #fff;
+  color: #8b1e14;
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  /* --- THÊM DÒNG NÀY --- */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Tạo hiệu ứng mờ dần */
+}
+
+/* Khi di chuột vào sản phẩm (.product) thì ẩn Badge đi */
+.product:hover .badge {
+  opacity: 0;          /* Làm mờ hoàn toàn */
+  visibility: hidden;  /* Ẩn hẳn khỏi cây hiển thị để không bấm nhầm */
+}
+
+/* ===========================
+   2. ADD TO CART BUTTON
+   =========================== */
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Nằm đè lên trên ảnh */
+  
+  background-color: rgba(230, 226, 221, 0.95); /* Màu kem nhạt, hơi trong suốt */
+  color: #8b1e14;
+  border: none;
+  padding: 15px 0;
+  
+  font-family: "Playfair Display", serif; /* Hoặc font bạn muốn */
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  /* Hiệu ứng ẩn mặc định */
+  opacity: 0;
+  transform: translateY(100%); /* Đẩy nút xuống dưới đáy ảnh */
+  transition: all 0.4s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #8b1e14;
+  color: #fff;
+}
+
+/* ===========================
+   HIỆU ỨNG KHI DI CHUỘT VÀO SẢN PHẨM (.product)
+   =========================== */
+.product:hover .add-to-cart-btn {
+  opacity: 1;
+  transform: translateY(0); /* Trượt lên vị trí gốc */
+}
