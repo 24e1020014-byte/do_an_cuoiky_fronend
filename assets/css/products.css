@@ -63,35 +63,6 @@
 
 
 
-/* --- Bộ lọc bên trái --- */
-/* .filters-panel {
-  display: none;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: 1px solid rgba(139, 30, 20, 0.12);
-  background-color: #fff;
-  color: #8b1e14;
-  font-family: "Playfair Display", serif;
-  animation: slideDown 0.3s ease forwards;
-}
-
-.filters-panel.visible {
-  display: block;
-} */
-
-/* .filters-panel {
-  max-height: 0;
-  overflow: hidden;
-  margin-top: 20px;
-  padding: 0 20px; 
-  border: 1px solid rgba(139, 30, 20, 0.12);
-  background-color: #fff;
-  color: #8b1e14;
-  font-family: "Playfair Display", serif;
-  transition: max-height 0.35s ease, padding 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-} */
-
 .filters-panel {
   /* --- VỊ TRÍ & KÍCH THƯỚC --- */
   position: absolute; /* Quan trọng nhất: Lấy ra khỏi luồng */
